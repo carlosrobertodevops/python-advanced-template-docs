@@ -3,7 +3,7 @@
 # Carregar variáveis do .env
 export $(grep -v '^#' .env | xargs)
 
-$REPOSITORY_URL=$REPOSITORY_URL"python-advanced-template-docs.git"
+$REPOSITORY_URL="https://github.com/carlosrobertodevops/python-advanced-template-docs.git"
 
 # Prepare
 git clone $REPOSITORY_URL
