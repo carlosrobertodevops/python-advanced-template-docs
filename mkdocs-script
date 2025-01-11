@@ -3,6 +3,8 @@
 # Carregar variáveis do .env
 export $(grep -v '^#' .env | xargs)
 
+$REPOSITORY_URL=$REPOSITORY_URL"python-advanced-template-docs.git"
+
 # Prepare
 git clone $REPOSITORY_URL
 cd repo
@@ -16,9 +18,9 @@ techdocs-cli generate --no-docker
 
 #gh secret set TECHDOCS_S3_BUCKET_NAME -r "$REPOSITORY_URL" -b  "$TECHDOCS_BUCKET"
 
-ENTITY_NAMESPACE="default"
-ENTITY_KIND="Component"
-ENTITY_NAME="python-advanced-template"
+$ENTITY_NAMESPACE="default"
+$ENTITY_KIND="Component"
+$ENTITY_NAME="python-advanced-template"
 
 # Publish
 techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_BUCKET --entity $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME
