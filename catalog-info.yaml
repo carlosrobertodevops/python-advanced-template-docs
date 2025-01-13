@@ -22,5 +22,5 @@ spec:
   owner: user:carlos
   lifecycle: production
   links:
-  - url: https://github.com/carlosroberto/python-advanced-template-docs/blob/main/catalog-info.yaml
+  - url: https://github.com/carlosrobertodevops/python-advanced-template-docs/blob/main/catalog-info.yaml
     title: Repositório GitHub
