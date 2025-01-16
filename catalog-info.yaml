@@ -1,15 +1,3 @@
-# apiVersion: backstage.io/v1alpha1
-# kind: Component
-# metadata:
-#   name: a-unique-name-for-your-docs
-#   annotations:
-#     # this could also be `url:<url>` if the documentation isn't in the same location
-#     backstage.io/techdocs-ref: dir:.
-# spec:
-#   type: documentation
-#   lifecycle: experimental
-#   owner: user-or-team-name
-
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
@@ -22,5 +10,5 @@ spec:
   owner: user:carlos
   lifecycle: production
   links:
-  - url: https://github.com/carlosroberto/python-advanced-template-docs/blob/main/catalog-info.yaml
+  - url: https://github.com/carlosrobertodevops/python-advanced-template-docs/blob/main/catalog-info.yaml
     title: Repositório GitHub
