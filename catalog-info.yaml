@@ -4,6 +4,7 @@ metadata:
   name: python-advanced-template
   description: Documentação do python-advanced-template
   annotations:
+    github.com/project-slug: carlosrobertodevops/python-advanced-template-docs
     backstage.io/techdocs-ref: dir:.
 spec:
   type: documentation
