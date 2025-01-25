@@ -2,9 +2,16 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: python-advanced-template-docs
+<<<<<<< HEAD
   description: Documentação do python-advanced-template-docse
+=======
+  description: Documentação do python-advanced-template
+>>>>>>> 781c455414e7fba01c095463f4587060f31dca4e
   annotations:
+    github.com/project-slug: carlosrobertodevops/python-advanced-template-docs
     backstage.io/techdocs-ref: dir:.
+    backstage.io/view-url: https://github.com/carlosrobertodevops/python-advanced-template-docs/blob/main/catalog-info.yaml
+    backstage.io/edit-url: https://github.com/carlosrobertodevops/python-advanced-template-docs/blob/main/catalog-info.yaml
 spec:
   type: documentation
   owner: user:carlos
