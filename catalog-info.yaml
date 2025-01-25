@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: python-advanced-template
-  description: Documentação do python-advanced-template
+  name: python-advanced-template-docs
+  description: Documentação do python-advanced-template-docse
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
