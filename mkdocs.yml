@@ -1,4 +1,4 @@
-site_name: python-advanced-template
+site_name: python-advanced-template-docs
 site_description: An informative description
 plugins:
 - techdocs-core
