@@ -5,3 +5,4 @@ plugins:
 nav:
 - Getting Started: index.md
 - Guia: guia.md
+- Sobre: about.md
