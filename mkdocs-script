@@ -11,15 +11,16 @@ cd repo
 npm install -g @techdocs/cli
 pip install "mkdocs-techdocs-core==1.*"
 
-
 TECHDOCS_BUCKET=$TECHDOCS_S3_BUCKET_NAME
 # AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
 # AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
 # AWS_REGION=$AWS_REGION
 
-NAMESPACE="default"
-KIND="Component"
-NAME="python-advanced-template-docs"
+# NAMESPACE="default"
+# KIND="Component"
+# NAME="python-advanced-template-docs"
+
+unset AWS_PROFILE
 
 # Generate
 techdocs-cli generate --no-docker
