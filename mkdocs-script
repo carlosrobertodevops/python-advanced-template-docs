@@ -16,14 +16,18 @@ TECHDOCS_BUCKET=$TECHDOCS_S3_BUCKET_NAME
 AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
 AWS_REGION=$AWS_REGION
-ENTITY_NAMESPACE="default"
-ENTITY_KIND="Component"
-ENTITY_NAME="python-advanced-template-docs"
+
+NAMESPACE="default"
+KIND="Component"
+NAME="python-advanced-template-docs"
 
 # Generate
 techdocs-cli generate --no-docker
 
 # Publish
-techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_BUCKET --entity $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME
+techdocs-cli publish \
+	--publisher-type awsS3 \
+	--storage-name $TECHDOCS_BUCKET \
+	--entity $NAMESPACE/$KIND/$NAME
 
 rm -rf "./python-advanced-template-docs"
