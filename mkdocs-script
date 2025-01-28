@@ -1,7 +1,7 @@
 #!/bin/bash
 # This is an example script
 # Carregar variáveis do .env
-export $(grep -v '^#' .env | xargs)
+# export $(grep -v '^#' .env | xargs)
 
 # Prepare
 git clone "https://github.com/carlosrobertodevops/python-advanced-template-docs.git"
