@@ -21,16 +21,16 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: ${{ secrets.AWS_REGION }}
-      ENTITY_NAMESPACE: "default"
-      ENTITY_KIND: "Component"
-      ENTITY_NAME: "python-advanced-template-docs"
+      NAMESPACE: ${{ secrets.ENTITY_NAMESPACE}}
+      KIND: ${{ secrets.ENTITY_KIND }}
+      NAME: ${{ secrets.ENTITY_NAME }}
       # In a Software template, Scaffolder will replace {{cookiecutter.component_id | jsonify}}
       # with the correct entity name. This is same as metadata.name in the entity's catalog-info.yaml
       # ENTITY_NAME: '{{ cookiecutter.component_id | jsonify }}'
 
     # steps:
     #   - name: Debug Variables
-    #     run: echo "Namespace: $ENTITY_NAMESPACE, Kind: $ENTITY_KIND, Name: $ENTITY_NAME"
+    #     run: echo "Namespace: $NAMESPACE, Kind: $KIND, Name: $NAME"
 
     steps:
       - name: Checkout code
@@ -40,23 +40,6 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-
-      # # the 2 steps below can be removed if you aren't using plantuml in your documentation
-      # - name: setup java
-      #   uses: actions/setup-java@v3
-      #   with:
-      #     distribution: 'zulu'
-      #     java-version: '11'
-      # - name: download, validate, install plantuml and its dependencies
-      #   run: |
-      #     curl -o plantuml.jar -L http://sourceforge.net/projects/plantuml/files/plantuml.1.2021.4.jar/download
-      #     echo "be498123d20eaea95a94b174d770ef94adfdca18  plantuml.jar" | sha1sum -c -
-      #     mv plantuml.jar /opt/plantuml.jar
-      #     mkdir -p "$HOME/.local/bin"
-      #     echo $'#!/bin/sh\n\njava -jar '/opt/plantuml.jar' ${@}' >> "$HOME/.local/bin/plantuml"
-      #     chmod +x "$HOME/.local/bin/plantuml"
-      #     echo "$HOME/.local/bin" >> $GITHUB_PATH
-      #     sudo apt-get install -y graphviz
 
       - name: Install techdocs-cli
         run: sudo npm install -g @techdocs/cli
@@ -68,4 +51,4 @@ jobs:
         run: techdocs-cli generate --no-docker --verbose
 
       - name: Publish docs site
-        run: techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_S3_BUCKET_NAME --entity $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME
+        run: techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_S3_BUCKET_NAME --entity $NAMESPACE/$KIND/$NAME
