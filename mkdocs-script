@@ -31,3 +31,4 @@ techdocs-cli publish \
 	--entity $NAMESPACE/$KIND/$NAME
 
 rm -rf "./python-advanced-template-docs"
+rm -rf "./site/"
