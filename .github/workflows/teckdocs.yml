@@ -2,13 +2,13 @@ name: Publish TechDocs Site
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     # You can even set it to run only when TechDocs related files are updated.
     paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
-      - 'catalog-info.yaml'
-      - './.github/workflows/techdocs.yml'
+      - "docs/**"
+      - "mkdocs.yml"
+      - "catalog-info.yaml"
+      - "./.github/workflows/techdocs.yml"
 
 jobs:
   publish-techdocs-site:
@@ -21,9 +21,9 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: ${{ secrets.AWS_REGION }}
-      ENTITY_NAMESPACE: 'default'
-      ENTITY_KIND: 'Component'
-      ENTITY_NAME: 'python-advanced-template-docs'
+      ENTITY_NAMESPACE: "default"
+      ENTITY_KIND: "Component"
+      ENTITY_NAME: "python-advanced-template-docs"
       # In a Software template, Scaffolder will replace {{cookiecutter.component_id | jsonify}}
       # with the correct entity name. This is same as metadata.name in the entity's catalog-info.yaml
       # ENTITY_NAME: '{{ cookiecutter.component_id | jsonify }}'
@@ -39,7 +39,7 @@ jobs:
       - uses: actions/setup-node@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       # # the 2 steps below can be removed if you aren't using plantuml in your documentation
       # - name: setup java
